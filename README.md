@@ -1,23 +1,28 @@
-📊 E-commerce Profit Prediction System
+📊 ProfitVision AI — E-commerce Profit Predictor
 
-This project is an end-to-end machine learning application that predicts whether a product will generate high or low profit based on historical sales data.
+Live App: https://profit-vision-ai.streamlit.app
 
-The system uses features such as product category, region, quantity, and sales to make predictions. A Random Forest classifier is trained on the dataset, and the model is deployed using Streamlit to provide an interactive user interface.
+An end-to-end machine learning application that predicts whether a product will generate **High** or **Low** profit based on category, region, quantity, and sales.
 
-🚀 Key Features
-- Predicts product profitability (High / Low)
-- Uses real-world e-commerce dataset
-- Machine Learning model (Random Forest)
-- Feature engineering & preprocessing
-- Interactive Streamlit web app
-- Deployed for real-time predictions
+🚀 What it does
+- Predicts profitability (High/Low) with probability
+- Handles categorical (Category, Region) + numerical (Quantity, Sales) inputs
+- Real-time inference via Streamlit
 
-🧠 Tech Stack
-- Python
-- Pandas
-- Scikit-learn
-- Streamlit
-- Joblib
+🧠 Model
+- Algorithm: Random Forest Classifier
+- Preprocessing: one-hot encoding (categoricals), standard scaling (numericals)
+- Target: derived using median profit threshold
 
-🎯 Business Use Case
-Helps businesses identify which products are likely to be profitable, enabling better inventory planning and decision-making.
+📊 Performance
+- Accuracy: ~83%
+- Balanced precision/recall across classes
+
+🧰 Tech Stack
+Python • Pandas • scikit-learn • Streamlit • Joblib
+
+▶️ Run locally
+```bash
+pip install -r requirements.txt
+python train_profit_model.py
+streamlit run streamlit_app.py
